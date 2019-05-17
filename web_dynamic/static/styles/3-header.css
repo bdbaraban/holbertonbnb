@@ -12,3 +12,10 @@ header {
 	width: 100%;
 	border-bottom: 1px solid #CCCCCC;
 }
+
+#api_status {
+  background-color: #cccccc;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
