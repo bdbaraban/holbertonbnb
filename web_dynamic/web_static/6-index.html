@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<!-- ********************** HEAD -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Holberton AirBnB</title>
+
+	<!-- ********************** FAVICON -->
+	<link rel="shortcut icon" href="images/icon.png">
+
+	<!-- ********************** CSS styles -->
+	<link rel="stylesheet" href="styles/4-common.css">
+	<link rel="stylesheet" href="styles/3-header.css">
+	<link rel="stylesheet" href="styles/3-footer.css">
+	<link rel="stylesheet" href="styles/6-filters.css">
+  </head>
+  <!-- ********************** BODY -->
+  <body>
+	<!-- ********************** HEADER -->
+	<header>
+	</header>
+	<main>
+	  <!-- ********************** DIV container -->
+	  <div class="container">
+		<!-- ********************** SECTION filters -->
+		<section class="filters">
+		  <!-- ********************** LOCATIONS -->
+		  <div class="locations">
+			<h3>States</h3>
+			<h4>Lorem ipsum dolor</h4>
+			<ul class="popover">
+			  <li><h2>California</h2>
+				<ul>
+				  <li>Pacifica</li>
+				  <li>San Diego</li>
+				</ul>
+			  </li>
+			  <li><h2>Illinois</h2>
+				<ul>
+				  <li>Chicago</li>
+				  <li>Winnetka</li>
+				</ul>
+			  </li>
+			</ul>
+		  </div>
+		  <!-- ********************** AMENITIES -->
+		  <div class="amenities">
+			<h3>Amenities</h3>
+			<h4>adipiscing elit</h4>
+			<ul class="popover">
+			  <li>Pool</li>
+			  <li>Wifi</li>
+			  <li>Breakfast</li>
+			  <li>Garage</li>
+			</ul>
+		  </div>
+		  <!-- ********************** SEARCH BUTTON -->
+		  <button>Search</button>
+		</section>
+	  </div>
+	</main>
+	<!-- FOOTER -->
+	<footer>
+	  Holberton School
+	</footer>
+  </body>
+</html>
