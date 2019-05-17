@@ -210,13 +210,15 @@ create: create [ARG] [PARAM 1] [PARAM 2] ...
 Uses [Travis-CI](https://travis-ci.org/) to run all tests on all commits to the
 github repo
 
-## Authors
+## Authors :black_nib:
 
-* MJ Johnson, [@mj31508](https://github.com/mj31508)
-* David John Coleman II, [davidjohncoleman.com](http://www.davidjohncoleman.com/) | [@djohncoleman](https://twitter.com/djohncoleman)
-* Kimberly Wong, [kjowong](https://github.com/kjowong) | [@kjowong](https://twitter.com/kjowong) | [kjowong@gmail.com](kjowong@gmail.com)
-* Carrie Ybay, [hicarrie](https://github.com/hicarrie) | [@hicarrie_](https://twitter.com/hicarrie_)
-* Jared Heck, [jarehec](https://github.com/jarehec) | [@jarehec](https://twitter.com/jarehec)
+* __MJ Johnson__ - <[@mj31508](https://github.com/mj31508)>
+* __David John Coleman II__ - <[davidjohncoleman.com](http://www.davidjohncoleman.com/)> | <[@djohncoleman](https://twitter.com/djohncoleman)>
+* __Kimberly Wong__ - <[kjowong](https://github.com/kjowong)> | <[@kjowong](https://twitter.com/kjowong)> | <[kjowong@gmail.com](kjowong@gmail.com)>
+* __Carrie Ybay__ - <[hicarrie](https://github.com/hicarrie)> | <[@hicarrie_](https://twitter.com/hicarrie_)>
+* __Jared Heck__ - <[jarehec](https://github.com/jarehec)> | <[@jarehec](https://twitter.com/jarehec)>
+* __Brennan D Baraban - <bdbaraban>(https://github.com/bdbaraban)> | <[@bdov_](https://twitter.com/bdov_>
+* Derrick Gee - <[kai-dg](https://github.com/kai-dg)> | <[@the_haru_kai](https://twitter.com/the_haru_kai)>
 
 ## License
 
