@@ -217,8 +217,8 @@ github repo
 * __Kimberly Wong__ - <[kjowong](https://github.com/kjowong)> | <[@kjowong](https://twitter.com/kjowong)> | <[kjowong@gmail.com](kjowong@gmail.com)>
 * __Carrie Ybay__ - <[hicarrie](https://github.com/hicarrie)> | <[@hicarrie_](https://twitter.com/hicarrie_)>
 * __Jared Heck__ - <[jarehec](https://github.com/jarehec)> | <[@jarehec](https://twitter.com/jarehec)>
-* __Brennan D Baraban - <bdbaraban>(https://github.com/bdbaraban)> | <[@bdov_](https://twitter.com/bdov_>
-* Derrick Gee - <[kai-dg](https://github.com/kai-dg)> | <[@the_haru_kai](https://twitter.com/the_haru_kai)>
+* __Brennan D Baraban__ - <bdbaraban>(https://github.com/bdbaraban)> | <[@bdov_](https://twitter.com/bdov_)>
+* __Derrick Gee__ - <[kai-dg](https://github.com/kai-dg)> | <[@the_haru_kai](https://twitter.com/the_haru_kai)>
 
 ## License
 
