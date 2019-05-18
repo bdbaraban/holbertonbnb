@@ -1,10 +1,51 @@
 $('document').ready(function () {
-  const url = 'http://' + window.location.hostname + ':5001/api/v1/status/';
-  $.get(url, function (response) {
+  const api = 'http://' + window.location.hostname;
+
+  $.get(api + ':5001:/api/v1/status/', function (response) {
     if (response.status === 'OK') {
       $('DIV#api_status').addClass('available');
     } else {
       $('DIV#api_status').removeClass('available');
+    }
+  });
+
+  $.ajax({
+    url: api + ':5001/api/v1/places_search/',
+    type: 'POST',
+    data: '{}',
+    contentType: 'application/json',
+    dataType: 'json',
+    success: function (data) {
+      $('SECTION.places').append(data.map(place => {
+        return `<ARTICLE>
+                  <DIV class="title">
+                    <H2>${place.name}</H2>
+                    <DIV class="price_by_night">
+                      ${place.price_by_night}
+                    </DIV>
+                  </DIV>
+                  <DIV class="information">
+                    <DIV class="max_guest">
+                      <I class="fa fa-users fa-3x" aria-hidden="true"></I>
+                      </BR>
+                      ${place.max_guest} Guests
+                    </DIV>
+                    <DIV class="number_rooms">
+                      <I class="fa fa-bed fa-3x" aria-hidden="true"></I>
+                      </BR>
+                      ${place.number_rooms} Bedrooms
+                    </DIV>
+                    <DIV class="number_bathrooms">
+                      <I class="fa fa-bath fa-3x" aria-hidden="true"></I>
+                      </BR>
+                      ${place.number_bathrooms} Bathrooms
+                    </DIV>
+                  </DIV>
+                  <DIV class="description">
+                    ${place.description}
+                  </DIV>
+                </ARTICLE>`;
+      }));
     }
   });
 
@@ -21,45 +62,4 @@ $('document').ready(function () {
       $('.amenities H4').text(Object.values(amenities).join(', '));
     }
   });
-  $.ajax({
-    url: 'http://192.168.1.24:5001/api/v1/places_search/',
-    type: 'POST',
-    dataType: 'json',
-    contentType: 'application/json',
-    data: '{}'
-  })
-    .done(function (data) {
-      for (let item of data) {
-        $('section.places').append(`
-            <article>
-              <div class="title">
-                <h2>${item.name}</h2>
-                <div class="price_by_night">
-                  ${item.price_by_night}
-                </div>
-              </div>
-              <div class="information">
-                <div class="max_guest">
-                  <i class="fa fa-users fa-3x" aria-hidden="true"></i>
-                  </br>
-                  ${item.max_guest} Guests
-                </div>
-                <div class="number_rooms">
-                  <i class="fa fa-bed fa-3x" aria-hidden="true"></i>
-                  </br>
-                  ${item.number_rooms} Bedrooms
-                </div>
-                <div class="number_bathrooms">
-                  <i class="fa fa-bath fa-3x" aria-hidden="true"></i>
-                  </br>
-                  ${item.number_bathrooms} Bathrooms
-                </div>
-              </div>
-              <div class="description">
-                ${item.description}
-              </div>
-            </article>
-          `);
-      }
-    });
 });
