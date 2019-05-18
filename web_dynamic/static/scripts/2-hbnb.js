@@ -1,9 +1,10 @@
 $('document').ready(function () {
-  $.get('http://172.28.128.4:5001/api/v1/status/', function (response) {
+  const url = 'http://' + window.location.hostname + ':5001/api/v1/status/';
+  $.get(url, function (response) {
     if (response.status === 'OK') {
-      $('DIV#api_status').css('background-color', '#ff545f');
+      $('DIV#api_status').addClass('available');
     } else {
-      $('DIV#api_status').css('background-color', '#ccc');
+      $('DIV#api_status').removeClass('available');
     }
   });
 
