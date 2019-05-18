@@ -1,9 +1,9 @@
 $('document').ready(function () {
-  $.get('http://0.0.0.0:5001/api/v1/status/', function (response) {
+  $.get('http://172.28.128.4:5001/api/v1/status/', function (response) {
     if (response.status === 'OK') {
-      $('DIV#api_status').addClass('available');
+      $('DIV#api_status').css('background-color', '#ff545f');
     } else {
-      $('DIV#api_status').removeClass('available');
+      $('DIV#api_status').css('background-color', '#ccc');
     }
   });
 
@@ -14,6 +14,10 @@ $('document').ready(function () {
     } else {
       delete amenities[$(this).attr('data-id')];
     }
-    $('.amenities H4').text(Object.values(amenities).join(', '));
+    if (Object.values(amenities).length === 0) {
+      $('.amenities H4').html('&nbsp;');
+    } else {
+      $('.amenities H4').text(Object.values(amenities).join(', '));
+    }
   });
 });
