@@ -1,57 +1,66 @@
 #!/usr/bin/python3
-"""
-    Flask route that returns json respone
-"""
+"""HolbertonBnB Amenity view."""
 from api.v1.views import app_views
 from flask import abort, jsonify, request
-from models import storage, CNC
-from flasgger.utils import swag_from
+from flasgger import swag_from
+from models import storage
+from models.amenity import Amenity
 
 
-@app_views.route('/amenities/', methods=['GET', 'POST'])
-@swag_from('swagger_yaml/amenities_no_id.yml', methods=['GET', 'POST'])
-def amenities_no_id(amenity_id=None):
+@app_views.route("/amenities", methods=["GET", "POST"])
+@swag_from("../apidocs/amenities/get_amenities.yml", methods=["GET"])
+@swag_from("../apidocs/amenities/post.yml", methods=["POST"])
+def amenities():
+    """Defines GET and POST methods for the /amenities route.
+
+    GET - Retrieves a list of all Amenity objects.
+    POST - Creates a Amenity.
     """
-        amenities route that handles http requests no ID given
+    # GET method
+    if request.method == "GET":
+        return jsonify([a.to_dict() for a in storage.all("Amenity").values()])
+
+    # POST method
+    data = request.get_json(silent=True)
+    if data is None:
+        return "Not a JSON", 400
+    if data.get("name") is None:
+        return "Missing name", 400
+    amenity = Amenity(**data)
+    amenity.save()
+    return jsonify(amenity.to_dict()), 201
+
+
+@app_views.route("/amenities/<amenity_id>", methods=["GET", "DELETE", "PUT"])
+@swag_from("../apidocs/amenities/get_amenity_id.yml", methods=["GET"])
+@swag_from("../apidocs/amenities/delete.yml", methods=["DELETE"])
+@swag_from("../apidocs/amenities/put.yml", methods=["PUT"])
+def amenity_id(amenity_id):
+    """Defines GET, PUT and DELETE methods for a specific ID on /amenities.
+
+    GET - Retrieves an Amenity object with the given id.
+    PUT - Updates an Amenity object with the given id using JSON key/values.
+    DELETE - Deletes an Amenity object with the given id.
     """
-    if request.method == 'GET':
-        all_amenities = storage.all('Amenity')
-        all_amenities = [obj.to_json() for obj in all_amenities.values()]
-        return jsonify(all_amenities)
+    amenity = storage.get("Amenity", amenity_id)
+    if amenity is None:
+        abort(404)
 
-    if request.method == 'POST':
-        req_json = request.get_json()
-        if req_json is None:
-            abort(400, 'Not a JSON')
-        if req_json.get('name') is None:
-            abort(400, 'Missing name')
-        Amenity = CNC.get('Amenity')
-        new_object = Amenity(**req_json)
-        new_object.save()
-        return jsonify(new_object.to_json()), 201
+    # GET method
+    if request.method == "GET":
+        return jsonify(amenity.to_dict())
 
+    # DELETE method
+    elif request.method == "DELETE":
+        storage.delete(amenity)
+        storage.save()
+        return jsonify({})
 
-@app_views.route('/amenities/<amenity_id>', methods=['GET', 'DELETE', 'PUT'])
-@swag_from('swagger_yaml/amenities_id.yml', methods=['GET', 'DELETE', 'PUT'])
-def amenities_with_id(amenity_id=None):
-    """
-        amenities route that handles http requests with ID given
-    """
-    amenity_obj = storage.get('Amenity', amenity_id)
-    if amenity_obj is None:
-        abort(404, 'Not found')
-
-    if request.method == 'GET':
-        return jsonify(amenity_obj.to_json())
-
-    if request.method == 'DELETE':
-        amenity_obj.delete()
-        del amenity_obj
-        return jsonify({}), 200
-
-    if request.method == 'PUT':
-        req_json = request.get_json()
-        if req_json is None:
-            abort(400, 'Not a JSON')
-        amenity_obj.bm_update(req_json)
-        return jsonify(amenity_obj.to_json()), 200
+    # PUT method
+    data = request.get_json(silent=True)
+    if data is None:
+        return "Not a JSON", 400
+    avoid = {"id", "created_at", "updated_at"}
+    [setattr(amenity, k, v) for k, v in data.items() if k not in avoid]
+    amenity.save()
+    return jsonify(amenity.to_dict())

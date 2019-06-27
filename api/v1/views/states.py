@@ -1,57 +1,66 @@
 #!/usr/bin/python3
-"""
-Flask route that returns json status response
-"""
+"""HolbertonBnB State view."""
 from api.v1.views import app_views
-from flask import abort, jsonify, make_response, request
-from flasgger import Swagger, swag_from
-from models import storage, CNC
+from flask import abort, jsonify, request
+from flasgger import swag_from
+from models import storage
+from models.state import State
 
 
-@app_views.route('/states', methods=['GET', 'POST'])
-@swag_from('swagger_yaml/states_no_id.yml', methods=['GET', 'POST'])
-def states_no_id():
+@app_views.route("/states", methods=["GET", "POST"])
+@swag_from("../apidocs/states/get_states.yml", methods=["GET"])
+@swag_from("../apidocs/states/post.yml", methods=["POST"])
+def states():
+    """Defines GET and POST methods for the states route.
+
+    GET - Retrives a list of all State objects.
+    POST - Creates a State.
     """
-        states route to handle http method for requested states no id provided
+    # GET method
+    if request.method == "GET":
+        return jsonify([s.to_dict() for s in storage.all("State").values()])
+
+    # POST method
+    data = request.get_json(silent=True)
+    if data is None:
+        return "Not a JSON", 400
+    if data.get("name") is None:
+        return "Missing name", 400
+    state = State(**data)
+    state.save()
+    return jsonify(state.to_dict()), 201
+
+
+@app_views.route("/states/<state_id>", methods=["GET", "DELETE", "PUT"])
+@swag_from("../apidocs/states/get_state_id.yml", methods=["GET"])
+@swag_from("../apidocs/states/delete.yml", methods=["DELETE"])
+@swag_from("../apidocs/states/put.yml", methods=["PUT"])
+def state_id(state_id):
+    """Defines GET, DELETE and PUT methods for a specific ID on states.
+
+    GET - Retrieves a State object with the given id.
+    DELETE - Deletes the State object with the given id.
+    PUT - Updates the State object with a given JSON object of key/value pairs.
     """
-    if request.method == 'GET':
-        all_states = storage.all('State')
-        all_states = list(obj.to_json() for obj in all_states.values())
-        return jsonify(all_states)
+    state = storage.get("State", state_id)
+    if state is None:
+        abort(404)
 
-    if request.method == 'POST':
-        req_json = request.get_json()
-        if req_json is None:
-            abort(400, 'Not a JSON')
-        if req_json.get("name") is None:
-            abort(400, 'Missing name')
-        State = CNC.get("State")
-        new_object = State(**req_json)
-        new_object.save()
-        return jsonify(new_object.to_json()), 201
+    # GET method
+    if request.method == "GET":
+        return jsonify(state.to_dict())
 
-
-@app_views.route('/states/<state_id>', methods=['GET', 'DELETE', 'PUT'])
-@swag_from('swagger_yaml/states_id.yml', methods=['PUT', 'GET', 'DELETE'])
-def states_with_id(state_id=None):
-    """
-        states route to handle http method for requested state by id
-    """
-    state_obj = storage.get('State', state_id)
-    if state_obj is None:
-        abort(404, 'Not found')
-
-    if request.method == 'GET':
-        return jsonify(state_obj.to_json())
-
-    if request.method == 'DELETE':
-        state_obj.delete()
-        del state_obj
+    # DELETE method
+    elif request.method == "DELETE":
+        state.delete()
+        storage.save()
         return jsonify({})
 
-    if request.method == 'PUT':
-        req_json = request.get_json()
-        if req_json is None:
-            abort(400, 'Not a JSON')
-        state_obj.bm_update(req_json)
-        return jsonify(state_obj.to_json())
+    # PUT method
+    data = request.get_json(silent=True)
+    if data is None:
+        return "Not a JSON", 400
+    avoid = {"id", "created_at", "updated_at"}
+    [setattr(state, k, v) for k, v in data.items() if k not in avoid]
+    state.save()
+    return jsonify(state.to_dict())
