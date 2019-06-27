@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """Defines the view for places amenities Api calls"""
 import os
 from flask import abort, jsonify, request

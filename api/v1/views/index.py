@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """Defines a status route for the HolbertonBnB API."""
 from flask import jsonify
 from flasgger import swag_from
