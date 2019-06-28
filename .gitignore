@@ -1,5 +1,6 @@
 *~
 \#*
 __pycache__
-dev/file.json
+*.pyc
+file.json
 versions/*
