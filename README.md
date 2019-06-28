@@ -1,14 +1,17 @@
-<img src="https://github.com/jarehec/AirBnB_clone_v3/blob/master/dev/HBTN-hbnb-Final.png" width="160" height=auto />
+<h1 align="center">HolbertonBnB</h1>
+<p align="center">An AirBnB clone.</p>
 
-# AirBnB Clone: Phase # 3
-
-: API with Swagger
+<p align="center">
+  <img src="https://github.com/bdbaraban/AirBnB_clone/blob/master/assets/hbnb-logo.png"
+       alt="HolbertonBnB logo"
+       width="250"
+  >
+</p>
 
 ## Description
 
-Project attempts to clone the the AirBnB application and website, including the
-database, storage, RESTful API, Web Framework, and Front End.  Currently the
-application is designed to run with 2 storage engine models:
+HolbertonBnB is a complete web application, integrating a MySQL database and Flask RESTful API with a dynamic
+HTML5/CSS3/jQuery front-end.
 
 * File Storage Engine:
 
