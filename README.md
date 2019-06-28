@@ -4,7 +4,7 @@
 <p align="center">
   <img src="https://github.com/bdbaraban/HolbertonBnB/blob/master/assets/hbnb-logo.png"
        alt="HolbertonBnB logo"
-       width="250"
+       width="500"
   >
 </p>
 
