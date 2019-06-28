@@ -85,36 +85,45 @@ $('document').ready(function() {
 // Dynamically insert places
 function appendPlaces(data) {
   $('SECTION.places').empty();
-  $('SECTION.places').append(
-    data.map(place => {
-      return `<ARTICLE>
-              <DIV class="title">
-                <H2>${place.name}</H2>
-                  <DIV class="price_by_night">
-                    ${place.price_by_night}
-                  </DIV>
-                </DIV>
-                <DIV class="information">
-                  <DIV class="max_guest">
-                    <I class="fa fa-users fa-3x" aria-hidden="true"></I>
-                    </BR>
-                    ${place.max_guest} Guests
-                  </DIV>
-                  <DIV class="number_rooms">
-                    <I class="fa fa-bed fa-3x" aria-hidden="true"></I>
-                    </BR>
-                    ${place.number_rooms} Bedrooms
-                  </DIV>
-                  <DIV class="number_bathrooms">
-                    <I class="fa fa-bath fa-3x" aria-hidden="true"></I>
-                    </BR>
-                    ${place.number_bathrooms} Bathrooms
-                  </DIV>
-                </DIV>
-                <DIV class="description">
-                  ${place.description}
-                </DIV>
-              </ARTICLE>`;
-    })
-  );
+  $('SECTION.places').append('<H1>Places</H1>');
+  for (let place of data) {
+    $.get('https://bdbnb.site/api/v1/users/' + place.user_id, function(
+      response
+    ) {
+      user = response;
+      $('SECTION.places').append(
+        `<ARTICLE>
+          <DIV class="name_and_price">
+            <H2>${place.name}</H2>
+            <DIV class="price_by_night">
+              ${place.price_by_night}
+            </DIV>
+          </DIV>
+          <DIV class="information">
+            <DIV class="max_guest">
+              <I class="fa fa-users fa-3x" aria-hidden="true"></I>
+              </BR>
+              ${place.max_guest} Guests
+            </DIV>
+            <DIV class="number_rooms">
+              <I class="fa fa-bed fa-3x" aria-hidden="true"></I>
+              </BR>
+              ${place.number_rooms} Bedrooms
+            </DIV>
+            <DIV class="number_bathrooms">
+              <I class="fa fa-bath fa-3x" aria-hidden="true"></I>
+              </BR>
+              ${place.number_bathrooms} Bathrooms
+            </DIV>
+          </DIV>
+          <DIV class="user"><STRONG>Owner: </STRONG>${user.first_name} ${
+          user.last_name
+        }</div>
+          <DIV class="description">
+            ${place.description}
+          </DIV>
+        </ARTICLE>`
+      );
+    });
+  }
 }
