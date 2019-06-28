@@ -8,6 +8,7 @@
     <!-- Favicon -->
     <LINK rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') + '?' + cache_id }}">
     <!-- Personal CSS -->
+    <LINK rel="stylesheet" href="{{ url_for('static', filename='styles/reset.css') + '?' + cache_id }}">
     <LINK rel="stylesheet" href="{{ url_for('static', filename='styles/common.css') + '?' + cache_id }}">
     <LINK rel="stylesheet" href="{{ url_for('static', filename='styles/header.css') + '?' + cache_id }}">
     <LINK rel="stylesheet" href="{{ url_for('static', filename='styles/footer.css') + '?' + cache_id }}">
@@ -32,7 +33,7 @@
       <DIV class="container">
 
         <!-- Filters search bar -->
-	      <SECTION class="filters">
+	      <SECTION class="filters" role="search">
 
           <!-- Locations filter -->
 	        <DIV class="locations">
