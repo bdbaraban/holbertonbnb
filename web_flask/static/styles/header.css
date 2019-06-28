@@ -1,22 +1,19 @@
-@charset "UTF-8";
-/** Holberton Practice Styles
- * ------ Header
+/*
+ * === Header style ===
  */
 
+/* Header style */
 header {
-  align-items: flex-end;
-	background-color: #fff;
-	background-image: url("../images/logo.png");
-	background-repeat: no-repeat;
-	background-position: 20px 50%;
+  align-items: center;
+  background: #fff url('../images/logo.png') 20px center no-repeat;
+  border-bottom: 1px solid #ccc;
   display: flex;
-	height: 70px;
-  flex-direction: column;
-  justify-content: center;
-	width: 100%;
-	border-bottom: 1px solid #ccc;
+  height: 70px;
+  justify-content: flex-end;
+  width: 100%;
 }
 
+/* API status circle style */
 #api_status {
   border-radius: 50%;
   background-color: #ccc;

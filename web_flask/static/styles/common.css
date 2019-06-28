@@ -1,34 +1,36 @@
-@charset "UTF-8";
-/** Holberton Practice Styles
- * ------ Common
+/*
+ * === Global style ===
  */
 
-html {
-	position: relative;
-	min-height: 100%;
-}
-
+/* Body style */
 body {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	min-height: 100vh;
-	margin: 0;
-	padding: 0;
-	color: #484848;
-	font-size: 14px;
-	font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #484848;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font: 14px Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  min-height: 100vh;
 }
 
+/* Block horizontal scrolling */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Main always fills page */
 main {
-	flex-grow: 1;
-	flex-shrink: 0;
+  flex-grow: 1;
+  flex-shrink: 0;
 }
 
-div.container {
-	max-width: 1000px;
-	margin: 30px auto;
-	display: flex;
-	flex-direction: column;
-	align-items: stretch;
+/* Container style */
+.container {
+  margin: 30px auto;
+  max-width: 1000px;
+}
+
+/* Strong style */
+strong {
+  font-weight: bold;
 }
