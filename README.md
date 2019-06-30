@@ -40,27 +40,33 @@ This repository is just the above - an organized, cleaned up, _deployed_ version
 I started this repository as a duplicate of [AirBnB_clone_v4](https://github.com/bdbaraban/AirBnB_clone_v4), the final version worked on within the scope of Holberton's curriculum. Since then, I have:
 
 * Cut out all irrelevant code, organizing just that needed to deploy the application.
-* Pieced together each of the front-end, back-end and API with strictly _my_ code, copying in the implementations of each that I worked on across all four versions.
+* Pieced together each of the front-end, back-end and API with strictly _my_ code, copying in the personal implementations of each that I worked on across all four versions.
 * Spruced up the front-end and wrote new auto-deployment Puppet and Fabric scripts.
 * Wrote thorough, organized documentation for all parts of repo.
 
 ### What this repository does include:
 
-* [Models class system built in Python.](./models)
-  * [View the dedicated models documentation.](./documentation/MODELS.md)
+* Models class system built in Python.
+  * [Source code](./models)
+  * [Documentation](./documentation/MODELS.md)
 
-* [Python console to manage back-end models](./console.py)
-  * [View the dedicated console documentation.](./documentation/CONSOLE.md)
+* Python console to manage back-end models
+  * [Source code](./console.py)
+  * [Documentation](./documentation/CONSOLE.md)
 
-* [Flask web application rendering HTML templates with Jinja2](./web_flask)
-  * [View the dedicated web_flask documentation](./documentation/WEB_FLASK.md)
+* Flask web application server rendering HTML templates with Jinja2
+  * [Source code](./web_flask)
+  * [Documentation](./documentation/WEB_FLASK.md)
 
-* [RESTful Flask API](./api)
+* RESTful Flask API
+  * [Source code](./api)
   * [View the dedicated api documentation.](./documentation/API.md)
-  * View the entire, deployed(!) documentation of the HolbertonBnB API at [bdbnb.site/apidocs](https://bdbnb.site/apidocs).
+  * [bdbnb.site/apidocs](https://bdbnb.site/apidocs)
 
 * Automatic deployment scripts.
-  * [View the dedicated deployment scripts documentation.](./documentation/DEPLOYMENT.md)
+  * [fabfile.py](./fabfile.py)
+  * [setup_server.pp](./setup_server.pp)
+  * [Documentation.](./documentation/DEPLOYMENT.md)
 
 ### What this repository does not include:
 
@@ -92,6 +98,10 @@ Deployment:
 | gunicorn     | ^19.9.0 |
 | Fabric       | ^2.4.0  |
 | Puppet       | ^5.4.0  |
+
+## Deployed Site :airplane:
+
+In case you missed it - HolbertonBnB is deployed! [Please do check it out!](https://bdbnb.site)
 
 ## Documentation :book:
 
