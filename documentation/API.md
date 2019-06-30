@@ -31,4 +31,4 @@ I would document all of the HolbertonBnB API endpoints here... but I already hav
 
 ## Author :black_nib:
 
-* __Brennan D Baraban__ - <[bdbaraban](https://github.com/bdbaraban)
+* __Brennan D Baraban__ - <[bdbaraban](https://github.com/bdbaraban)>
