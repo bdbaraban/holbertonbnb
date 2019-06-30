@@ -13,7 +13,7 @@ HolbertonBnB supports the following classes:
 <p align="center">
   <img src="https://github.com/bdbaraban/HolbertonBnB/blob/master/assets/hbnb-models.png"
        alt="HolbertonBnB logo"
-       width="500"
+       width="750"
   >
 </p>
 
