@@ -16,7 +16,7 @@ HTML5/CSS3/jQuery front-end.
 <p align="center">
   <img src="https://github.com/bdbaraban/HolbertonBnB/blob/master/assets/hbnb-stack.png"
        alt="HolbertonBnB logo"
-       width="500"
+       width="750"
   >
 </p>
 
