@@ -38,4 +38,4 @@ Of course, the server is truly only functional in conjunction with the [Holberto
 
 ## Author :black_nib:
 
-* __Brennan D Baraban__ - <[bdbaraban](https://github.com/bdbaraban)
+* __Brennan D Baraban__ - <[bdbaraban](https://github.com/bdbaraban)>
