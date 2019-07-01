@@ -60,13 +60,13 @@ I started this repository as a duplicate of [AirBnB_clone_v4](https://github.com
 
 * RESTful Flask API
   * [Source code](./api)
-  * [View the dedicated api documentation.](./documentation/API.md)
-  * [bdbnb.site/apidocs](https://bdbnb.site/apidocs)
+  * [Documentation](./documentation/API.md)
+  * Swagger documentation - [bdbnb.site/apidocs](https://bdbnb.site/apidocs)
 
 * Automatic deployment scripts.
   * [fabfile.py](./fabfile.py)
   * [setup_server.pp](./setup_server.pp)
-  * [Documentation.](./documentation/DEPLOYMENT.md)
+  * [Documentation](./documentation/DEPLOYMENT.md)
 
 ### What this repository does not include:
 
