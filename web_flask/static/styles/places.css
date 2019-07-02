@@ -37,9 +37,9 @@
   color: #ff5a5f;
   display: flex;
   font-size: 30px;
-  height: 60px;
+  height: 70px;
   justify-content: center;
-  min-width: 60px;
+  min-width: 70px;
 }
 
 /* Guests, rooms, and bathrooms information */
