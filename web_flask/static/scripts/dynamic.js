@@ -86,17 +86,16 @@ $('document').ready(function() {
 function appendPlaces(data) {
   $('SECTION.places').empty();
   $('SECTION.places').append('<H1>Places</H1>');
-  for (let place of data) {
-    $.get('https://bdbnb.site/api/v1/users/' + place.user_id, function(
-      response
-    ) {
-      user = response;
+  $.get('https://bdbnb.site/api/v1/users/', function(response) {
+    const users = response;
+    for (let place of data) {
+      const user = users.find(u => u.id === place.user_id);
       $('SECTION.places').append(
         `<ARTICLE>
           <DIV class="name_and_price">
             <H2>${place.name}</H2>
             <DIV class="price_by_night">
-              ${place.price_by_night}
+              $${place.price_by_night}
             </DIV>
           </DIV>
           <DIV class="information">
@@ -124,6 +123,6 @@ function appendPlaces(data) {
           </DIV>
         </ARTICLE>`
       );
-    });
-  }
+    }
+  });
 }
