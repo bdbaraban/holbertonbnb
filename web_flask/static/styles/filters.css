@@ -57,11 +57,6 @@
   width: 25%;
 }
 
-/* Amenities alignment */
-.filters .amenities {
-  margin-left: -4px;
-}
-
 /* Locations border */
 .filters .locations {
   border-right: 1px solid #ddd;
@@ -116,6 +111,11 @@
   .filters {
     width: 95%;
     margin: 0 auto;
+  }
+
+  /* Amenities alignment */
+  .filters .amenities {
+    margin-left: -4px;
   }
 }
 
