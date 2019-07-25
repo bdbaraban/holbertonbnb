@@ -1,30 +1,30 @@
-<h1 align="center">HolbertonBnB</h1>
-<p align="center">An AirBnB clone.</p>
+<h1 align="center">Holbertonbnb</h1>
+<p align="center">An Airbnb clone.</p>
 
 <p align="center">
-  <img src="https://github.com/bdbaraban/HolbertonBnB/blob/master/assets/hbnb-logo.png"
-       alt="HolbertonBnB logo"
+  <img src="https://github.com/bdbaraban/holbertonbnb/blob/master/assets/hbnb-logo.png"
+       alt="Holbertonbnb logo"
        width="500"
   >
 </p>
 
 ## Description :house:
 
-HolbertonBnB is a complete full-stack web application, integrating a MySQL database and Flask RESTful API with a dynamic
+Holbertonbnb is a complete full-stack web application, integrating a MySQL database and Flask RESTful API with a dynamic
 HTML5/CSS3/jQuery front-end.
 
 <p align="center">
-  <img src="https://github.com/bdbaraban/HolbertonBnB/blob/master/assets/hbnb-stack.png"
-       alt="HolbertonBnB logo"
+  <img src="https://github.com/bdbaraban/holbertonbnb/blob/master/assets/hbnb-stack.png"
+       alt="Holbertonbnb logo"
        width="750"
   >
 </p>
 
-### Brennan, what is this, your fourth AirBnB repo?
+### Brennan, what is this, your fourth Airbnb repo?
 
 Fifth, actually :sweat_smile:.
 
-HolbertonBnB was the central web application of the Holberton School year one curriculum. The project spanned the course of two months and four versions, each of which you can view at the below links:
+Holbertonbnb was the central web application of the Holberton School year one curriculum. The project spanned the course of two months and four versions, each of which you can view at the below links:
 
 1. [AirBnB_clone](https://github.com/bdbaraban/AirBnB_clone)
 2. [AirBnB_clone_v2](https://github.com/bdbaraban/AirBnB_clone_v2)
@@ -35,42 +35,46 @@ The above versions are separate, isolated codebases. While the first was started
 
 This versioning process was a great experience in pair programming and working on unfamiliar, developed codebases. Yet, it was not so great from a portfolio perspective and the want of a central, organized repository where I could show off all the work I coded and learned over the course of this clone.
 
-This repository is just the above - an organized, cleaned up, _deployed_ version of HolbertonBnB. Call it a minified build, if you will.
+This repository is just the above - an organized, cleaned up, _deployed_ version of Holbertonbnb. Call it a minified build, if you will.
 
 I started this repository as a duplicate of [AirBnB_clone_v4](https://github.com/bdbaraban/AirBnB_clone_v4), the final version worked on within the scope of Holberton's curriculum. Since then, I have:
 
-* Cut out all irrelevant code, organizing just that needed to deploy the application.
-* Pieced together each of the front-end, back-end and API with strictly _my_ code, copying in the personal implementations of each that I worked on across all four versions.
-* Spruced up the front-end and wrote new auto-deployment Puppet and Fabric scripts.
-* Wrote thorough, organized documentation for all parts of repo.
+- Cut out all irrelevant code, organizing just that needed to deploy the application.
+- Pieced together each of the front-end, back-end and API with strictly _my_ code, copying in the personal implementations of each that I worked on across all four versions.
+- Spruced up the front-end and wrote new auto-deployment Puppet and Fabric scripts.
+- Wrote thorough, organized documentation for all parts of repo.
 
 ### What this repository does include:
 
-* Models class system built in Python.
-  * [Source code](./models)
-  * [Documentation](./documentation/MODELS.md)
+- Models class system built in Python.
 
-* Python console to manage back-end models
-  * [Source code](./console.py)
-  * [Documentation](./documentation/CONSOLE.md)
+  - [Source code](./models)
+  - [Documentation](./documentation/MODELS.md)
 
-* Flask web application server rendering HTML templates with Jinja2
-  * [Source code](./web_flask)
-  * [Documentation](./documentation/WEB_FLASK.md)
+- Python console to manage back-end models
 
-* RESTful Flask API
-  * [Source code](./api)
-  * [Documentation](./documentation/API.md)
-  * Swagger documentation - [bdbnb.site/apidocs](https://bdbnb.site/apidocs)
+  - [Source code](./console.py)
+  - [Documentation](./documentation/CONSOLE.md)
 
-* Automatic deployment scripts.
-  * [fabfile.py](./fabfile.py)
-  * [setup_server.pp](./setup_server.pp)
-  * [Documentation](./documentation/DEPLOYMENT.md)
+- Flask web application server rendering HTML templates with Jinja2
+
+  - [Source code](./web_flask)
+  - [Documentation](./documentation/WEB_FLASK.md)
+
+- RESTful Flask API
+
+  - [Source code](./api)
+  - [Documentation](./documentation/API.md)
+  - Swagger documentation - [bdbnb.site/apidocs](https://bdbnb.site/apidocs)
+
+- Automatic deployment scripts.
+  - [fabfile.py](./fabfile.py)
+  - [setup_server.pp](./setup_server.pp)
+  - [Documentation](./documentation/DEPLOYMENT.md)
 
 ### What this repository does not include:
 
-* Test suite
+- Test suite
 
 Unfortunately, the test suite did not hold up well over the course of four different codebases, and was a bit much to justifiably refactor for this minified repo. Which is too bad, because this project involved a significant amount of time spent developing an unittest test suite testing the entire back-end. If you're interested in looking at tests I was involved in writing, my most signficant test work occurred in [AirBnB_clone](https://github.com/bdbaraban/AirBnB_clone).
 
@@ -101,7 +105,7 @@ Deployment:
 
 ## Deployed Site :airplane:
 
-In case you missed it - HolbertonBnB is deployed! [Please do check it out!](https://bdbnb.site)
+In case you missed it - Holbertonbnb is deployed! [Please do check it out!](https://bdbnb.site)
 
 ## Documentation :book:
 
@@ -109,7 +113,7 @@ In case you missed it - I've documented this entire repository! [Please do check
 
 ## Author :black_nib:
 
-* __Brennan D Baraban__ - <[bdbaraban](https://github.com/bdbaraban)>
+- **Brennan D Baraban** - <[bdbaraban](https://github.com/bdbaraban)>
 
 ## License :lock:
 
