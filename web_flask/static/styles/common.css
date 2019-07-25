@@ -39,8 +39,6 @@ strong {
 /* GitHub fork me ribbon */
 .github {
   right: 0;
-  height: 180px;
   position: absolute;
   top: 0;
-  width: 180px;
 }
