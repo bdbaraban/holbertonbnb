@@ -8,12 +8,13 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  font: 14px Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 14px Circular, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   min-height: 100vh;
 }
 
 /* Block horizontal scrolling */
-html, body {
+html,
+body {
   width: 100%;
   overflow-x: hidden;
 }
@@ -33,4 +34,13 @@ main {
 /* Strong style */
 strong {
   font-weight: bold;
+}
+
+/* GitHub fork me ribbon */
+.github {
+  right: 0;
+  height: 180px;
+  position: absolute;
+  top: 0;
+  width: 180px;
 }
