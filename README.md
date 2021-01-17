@@ -35,7 +35,7 @@ The above versions are separate, isolated codebases. While the first was started
 
 This versioning process was a great experience in pair programming and working on unfamiliar, developed codebases. Yet, it was not so great from a portfolio perspective and the want of a central, organized repository where I could show off all the work I coded and learned over the course of this clone.
 
-This repository is just the above - an organized, cleaned up, _deployed_ version of Holbertonbnb. Call it a minified build, if you will.
+This repository is just the above - an organized, cleaned up version of Holbertonbnb. Call it a minified build, if you will.
 
 I started this repository as a duplicate of [AirBnB_clone_v4](https://github.com/bdbaraban/AirBnB_clone_v4), the final version worked on within the scope of Holberton's curriculum. Since then, I have:
 
@@ -102,10 +102,6 @@ Deployment:
 | gunicorn     | ^19.9.0 |
 | Fabric       | ^2.4.0  |
 | Puppet       | ^5.4.0  |
-
-## Deployed Site :airplane:
-
-In case you missed it - Holbertonbnb is deployed! [Please do check it out!](https://bdbnb.site)
 
 ## Documentation :book:
 
